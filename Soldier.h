@@ -10,6 +10,8 @@ class Soldier : public Unit {
     public:
         Soldier(const std::string& name, int hp, int dmg);
         ~Soldier();
+        
+        void setUnitType();
 };
 
 #endif // SOLDIER_H

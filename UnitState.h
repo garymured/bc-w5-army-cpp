@@ -6,6 +6,7 @@
 class UnitState {
     protected:
         std::string name;
+        std::string unitType;
         int hitPoints;
         int hitPointsLimit;
         int physicalDamage;
@@ -14,15 +15,17 @@ class UnitState {
         UnitState();
         ~UnitState();
         
+        const std::string& getName() const;
+        const std::string& getUnitType() const;
         int getHitPoints() const;
         int getHitPointsLimit() const;
         int getDamage() const;
-        const std::string& getName() const;
         
+        void setName(std::string name);
+        void setUnitType(std::string unitType);
         void setHitPoints(int hp);
         void setHitPointsLimit(int hp);
         void setPhysicalDamage(int dmg);
-        void setName(std::string name);
 };
 
 # endif // UNITSTATE_H

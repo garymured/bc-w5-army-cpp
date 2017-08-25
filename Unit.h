@@ -25,6 +25,8 @@ class Unit {
         
         void print() const;
         
+        virtual void setUnitType() = 0;
+        
         virtual void takeDamage(int dmg);
         void addHitPoints(int hp);
         // void takeDamage(int dmg);

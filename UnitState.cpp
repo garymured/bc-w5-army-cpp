@@ -8,6 +8,10 @@ UnitState::~UnitState() {
     // std::cout << "DEBUG: UnitState destructor works" << std::endl;
 }
 
+const std::string& UnitState::getUnitType() const {
+    return this->unitType;
+}
+
 int UnitState::getHitPoints() const {
     return this->hitPoints;
 }
@@ -26,6 +30,10 @@ const std::string& UnitState::getName() const {
 
 void UnitState::setName(std::string name) {
     this->name = name;
+}
+
+void UnitState::setUnitType(std::string unitType) {
+    this->unitType = unitType;
 }
 
 void UnitState::setHitPoints(int hp) {
