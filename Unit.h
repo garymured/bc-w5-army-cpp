@@ -9,8 +9,8 @@ class Unit {
     private:
         
     protected:
-        UnitState * state;
-        Ability * ability;
+        UnitState* state;
+        Ability* ability;
         
     public:
         Unit(const std::string& name, int hp, int dmg);
@@ -21,9 +21,11 @@ class Unit {
         int getHitPoints() const;
         int getHitPointsLimit() const;
         
+        void ensureIsAlive() const;
+        
         void print() const;
         
-        virtual void takeDamage(int dmg) = 0;
+        virtual void takeDamage(int dmg);
         void addHitPoints(int hp);
         // void takeDamage(int dmg);
 
@@ -33,7 +35,7 @@ class Unit {
 
 class DefaultAbility : public Ability {
     public:
-        DefaultAbility();
+        DefaultAbility(Unit* unit);
         ~DefaultAbility();
         
         void action(Unit* enemy);

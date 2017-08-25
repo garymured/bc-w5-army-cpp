@@ -19,9 +19,10 @@ class UnitState {
         int getDamage() const;
         const std::string& getName() const;
         
-        void setName(std::string name);
         void setHitPoints(int hp);
+        void setHitPointsLimit(int hp);
         void setPhysicalDamage(int dmg);
+        void setName(std::string name);
 };
 
 # endif // UNITSTATE_H

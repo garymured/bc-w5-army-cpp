@@ -9,12 +9,12 @@ class Ability {
     private:
         
     protected:
-        
+        Unit* unit;
     public:
-        Ability();
+        Ability(Unit* unit);
         ~Ability();
         
-        void action(Unit* enemy);
+        virtual void action(Unit* unit) = 0;
 };
 
 

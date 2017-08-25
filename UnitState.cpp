@@ -29,8 +29,11 @@ void UnitState::setName(std::string name) {
 }
 
 void UnitState::setHitPoints(int hp) {
-    this->hitPointsLimit = hp;
     this->hitPoints = hp;
+}
+
+void UnitState::setHitPointsLimit(int hp) {
+    this->hitPointsLimit = hp;
 }
 
 void UnitState::setPhysicalDamage(int dmg) {
