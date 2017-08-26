@@ -3,6 +3,8 @@
 Rogue::Rogue(const std::string& name, int hp, int dmg) : Unit(name, hp, dmg) {
     this->ability = new RogueAbility(this);
     
+    setUnitType();
+    
     // std::cout << "DEBUG: Rogue constructor works" << std::endl;
 }
 
@@ -15,7 +17,7 @@ void Rogue::setUnitType() {
 }
 
 RogueAbility::RogueAbility(Unit* unit) : Ability(unit) {
-    std::cout << "DEBUG: RogueAbility constructor works" << std::endl;
+    // std::cout << "DEBUG: RogueAbility constructor works" << std::endl;
 }
 
 RogueAbility::~RogueAbility() {

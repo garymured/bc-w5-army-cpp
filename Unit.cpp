@@ -22,6 +22,10 @@ const std::string& Unit::getName() const {
     return this->state->getName();
 }
 
+const std::string& Unit::getUnitType() const {
+    return this->state->getUnitType();
+}
+
 int Unit::getDamage() const {
     return this->state->getDamage();
 }
@@ -57,10 +61,11 @@ void Unit::attack(Unit* enemy) {
 }
 
 void Unit::print() const {
-    std::cout << "Unit name: " << this->getName() << "\n"
+    std::cout << "Unit name:       " << this->getName() << "\n"
+              << "Unit type:       " << this->getUnitType() << "\n"
               << "Unit hit points: " << this->getHitPoints() << "/"
               << this->getHitPointsLimit() << "\n"
-              << "Unit damage: " << this->getDamage() << std::endl << std::endl;
+              << "Unit damage:     " << this->getDamage() << std::endl << std::endl;
 }
 
 DefaultAbility::DefaultAbility(Unit* unit) : Ability(unit) {
@@ -77,20 +82,22 @@ void DefaultAbility::action(Unit* enemy) {
     enemy->ensureIsAlive();
     enemy->takeDamage(this->unit->getDamage());
     
-    if ( enemy->getHitPoints() != 0 ) {
-        this->unit->takeDamage(enemy->getDamage() / 2);
-    }
+    enemy->ensureIsAlive();
+    this->unit->takeDamage(enemy->getDamage() / 2);
 }
 
-// void Unit::addHitPoints(int hp) {
-//     ensureIsAlive();
+void Unit::addHitPoints(int hpToAdd) {
+    ensureIsAlive();
     
-//     if ( this->hitPointsLimit - this->hitPoints >= hp ) {
-//         this->hitPoints += hp;
-//     } else {
-//         this->hitPoints = this->hitPointsLimit;
-//     }
-// }
+    int hitPoints = this->state->getHitPoints();
+    int hitPointsLimit = this->state->getHitPointsLimit();
+    
+    if ( hitPointsLimit - hitPoints >= hpToAdd ) {
+        this->state->setHitPoints(hitPoints + hpToAdd);
+    } else {
+        this->state->setHitPoints(hitPointsLimit);
+    }
+}
 
 
 

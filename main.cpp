@@ -1,8 +1,34 @@
 #include <iostream>
 #include "Soldier.h"
 #include "Rogue.h"
+#include "Vampire.h"
 
 int main() {
+    /* 
+    TESTING Vampire
+    */
+    
+    Unit* vamp1 = new Vampire("Drakula", 150, 20);
+    Unit* rogue1 = new Rogue("Robin", 140, 15);
+    
+    rogue1->attack(vamp1);
+    
+    vamp1->print();
+    rogue1->print();
+    
+    rogue1->attack(vamp1);
+    
+    vamp1->print();
+    rogue1->print();
+    
+    vamp1->attack(rogue1);
+    
+    vamp1->print();
+    rogue1->print();
+    
+    delete vamp1;
+    delete rogue1;
+    
     /* 
     TESTING Soldier
     */
@@ -25,19 +51,24 @@ int main() {
     TESTING Rogue
     */
     
-    Unit* rogue1 = new Rogue("Rogue1", 140, 15);
-    Unit* sold1 = new Soldier("Jane", 100, 10);
+    // Unit* rogue1 = new Rogue("Rogue1", 140, 15);
+    // Unit* sold1 = new Soldier("Jane", 100, 10);
     
-    rogue1->print();
-    sold1->print();
+    // rogue1->print();
+    // sold1->print();
     
-    rogue1->attack(sold1);
+    // rogue1->attack(sold1);
     
-    rogue1->print();
-    sold1->print();
+    // rogue1->print();
+    // sold1->print();
     
-    delete rogue1;
-    delete sold1;
+    // sold1->attack(rogue1);
+    
+    // rogue1->print();
+    // sold1->print();
+    
+    // delete rogue1;
+    // delete sold1;
     
     return 0;
 }

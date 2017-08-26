@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c
 LDFLAGS=
-SOURCES=main.cpp Unit.cpp UnitState.cpp Ability.cpp Soldier.cpp Rogue.cpp
+SOURCES=main.cpp Unit.cpp UnitState.cpp Ability.cpp Soldier.cpp Rogue.cpp Vampire.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=main
 

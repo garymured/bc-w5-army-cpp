@@ -17,6 +17,7 @@ class Unit {
         ~Unit();
         
         const std::string& getName() const;
+        const std::string& getUnitType() const;
         int getDamage() const;
         int getHitPoints() const;
         int getHitPointsLimit() const;
@@ -29,8 +30,7 @@ class Unit {
         
         virtual void takeDamage(int dmg);
         void addHitPoints(int hp);
-        // void takeDamage(int dmg);
-
+        
         void attack(Unit* enemy);
         void counterAttack(Unit* enemy);
 };
