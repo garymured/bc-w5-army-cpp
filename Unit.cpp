@@ -55,6 +55,20 @@ void Unit::takeDamage(int dmg) {
     }
 }
 
+void Unit::setAbility(Ability* newAbility) {
+    delete this->ability;
+    
+    this->ability = newAbility;
+}
+
+void Unit::setUnitType(const std::string unitType) {
+    this->state->setUnitType(unitType);
+}
+
+void Unit::infect(Unit* victim) {
+    std::cout << "DEBUG: Unit infect works" << std::endl;
+}
+
 void Unit::attack(Unit* enemy) {
     this->ability->action(enemy);
     // enemy->counterAttack(this);

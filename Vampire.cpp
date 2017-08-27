@@ -16,6 +16,13 @@ void Vampire::setUnitType() {
     this->state->setUnitType("Vampire");
 }
 
+void Vampire::infect(Unit* victim) {
+    if ( victim->getUnitType() != "Werevolf" ) {
+        victim->setAbility(new VampireAbility(victim));
+        victim->setUnitType("Vampire");
+    }
+}
+
 VampireAbility::VampireAbility(Unit* unit) : Ability(unit) {
     // std::cout << "DEBUG: VampireAbility constructor works" << std::endl;
 }

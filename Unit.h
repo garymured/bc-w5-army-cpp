@@ -27,6 +27,9 @@ class Unit {
         void print() const;
         
         virtual void setUnitType() = 0;
+        void setAbility(Ability* newAbility);
+        void setUnitType(const std::string unitType);
+        virtual void infect(Unit* victim);
         
         virtual void takeDamage(int dmg);
         void addHitPoints(int hp);

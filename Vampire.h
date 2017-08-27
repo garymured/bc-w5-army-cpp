@@ -14,6 +14,8 @@ class Vampire : public Unit {
         ~Vampire();
         
         void setUnitType();
+        
+        void infect(Unit* victim);
 };
 
 class VampireAbility : public Ability {

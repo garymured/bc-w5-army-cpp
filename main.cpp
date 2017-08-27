@@ -10,6 +10,7 @@ int main() {
     
     Unit* vamp1 = new Vampire("Drakula", 150, 20);
     Unit* rogue1 = new Rogue("Robin", 140, 15);
+    Unit* sold1 = new Soldier("John", 100, 18);
     
     rogue1->attack(vamp1);
     
@@ -25,6 +26,16 @@ int main() {
     
     vamp1->print();
     rogue1->print();
+    
+    vamp1->infect(rogue1);
+    
+    vamp1->print();
+    rogue1->print();
+    
+    rogue1->attack(sold1);
+    
+    rogue1->print();
+    sold1->print();
     
     delete vamp1;
     delete rogue1;
