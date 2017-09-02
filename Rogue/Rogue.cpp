@@ -1,19 +1,13 @@
 #include "Rogue.h"
 
-Rogue::Rogue(const std::string& name, int hp, int dmg) : Unit(name, hp, dmg) {
+Rogue::Rogue() : Unit() {
     this->ability = new RogueAbility(this);
     
-    setUnitType();
-    
-    // std::cout << "DEBUG: Rogue constructor works" << std::endl;
+    setState("Rogue", 120, 120, 15);
 }
 
 Rogue::~Rogue() {
     // std::cout << "DEBUG: Rogue destructor works" << std::endl;
-}
-
-void Rogue::setUnitType() {
-    this->state->setUnitType("Rogue");
 }
 
 RogueAbility::RogueAbility(Unit* unit) : Ability(unit) {

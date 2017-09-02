@@ -2,7 +2,7 @@
 #define VAMPIRE_H
 
 #include <iostream>
-#include "Unit.h"
+#include "../Unit/Unit.h"
 
 class Vampire : public Unit {
     private:
@@ -10,13 +10,11 @@ class Vampire : public Unit {
     protected:
     
     public:
-        Vampire(const std::string& name, int hp, int dmg);
+        Vampire();
         ~Vampire();
         
-        void setUnitType();
-        
-        void infect(Unit* victim);
 };
+
 
 class VampireAbility : public Ability {
     public:
@@ -24,6 +22,7 @@ class VampireAbility : public Ability {
         ~VampireAbility();
         
         void action(Unit* enemy);
+        void infect(Unit* victim);
 };
 
 #endif // VAMPIRE_H

@@ -2,18 +2,16 @@
 #define ROGUE_H
 
 #include <iostream>
-#include "Unit.h"
+#include "../Unit/Unit.h"
 
 class Rogue : public Unit {
     private:
-        
+    
     protected:
     
     public:
-        Rogue(const std::string& name, int hp, int dmg);
+        Rogue();
         ~Rogue();
-        
-        void setUnitType();
 };
 
 class RogueAbility : public Ability {
@@ -23,5 +21,6 @@ class RogueAbility : public Ability {
         
         void action(Unit* enemy);
 };
+
 
 #endif // ROGUE_H
