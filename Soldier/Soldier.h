@@ -2,16 +2,14 @@
 #define SOLDIER_H
 
 #include <iostream>
-#include "Unit.h"
+#include "../Unit/Unit.h"
 
 class Soldier : public Unit {
     private:
     
     public:
-        Soldier(const std::string& name, int hp, int dmg);
+        Soldier();
         ~Soldier();
-        
-        void setUnitType();
 };
 
 #endif // SOLDIER_H

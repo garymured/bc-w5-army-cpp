@@ -1,9 +1,9 @@
 #include "Vampire.h"
 
-Vampire::Vampire(const std::string& name, int hp, int dmg) : Unit(name, hp, dmg) {
+Vampire::Vampire() : Unit() {
     this->ability = new VampireAbility(this);
     
-    setUnitType();
+    setState("Vampire", 150, 150, 20);
     
     // std::cout << "DEBUG: Vampire constructor works" << std::endl;
 }
@@ -12,16 +12,6 @@ Vampire::~Vampire() {
     // std::cout << "DEBUG: Vampire destructor works" << std::endl;
 }
 
-void Vampire::setUnitType() {
-    this->state->setUnitType("Vampire");
-}
-
-void Vampire::infect(Unit* victim) {
-    if ( victim->getUnitType() != "Werevolf" ) {
-        victim->setAbility(new VampireAbility(victim));
-        victim->setUnitType("Vampire");
-    }
-}
 
 VampireAbility::VampireAbility(Unit* unit) : Ability(unit) {
     // std::cout << "DEBUG: VampireAbility constructor works" << std::endl;

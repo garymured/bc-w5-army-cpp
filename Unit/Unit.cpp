@@ -1,13 +1,13 @@
 #include "Unit.h"
 
-Unit::Unit(const std::string& name, int hp, int dmg) {
+Unit::Unit() {
     this->state = new UnitState();
     this->ability = new DefaultAbility(this);
     
-    this->state->setName(name);
-    this->state->setHitPoints(hp);
-    this->state->setHitPointsLimit(hp);
-    this->state->setPhysicalDamage(dmg);
+    // this->state->setName(name);
+    // this->state->setHitPoints(hp);
+    // this->state->setHitPointsLimit(hp);
+    // this->state->setPhysicalDamage(dmg);
     
     // std::cout << "DEBUG: Unit constructor works" << std::endl;
 }
@@ -16,6 +16,13 @@ Unit::~Unit() {
     delete state;
     delete ability;
     // std::cout << "DEBUG: Unit destructor works" << std::endl;
+}
+
+void Unit::setState(std::string unitType, int hp, int hpLim, int dmg) {
+    this->state->setUnitType(unitType);
+    this->state->setHitPoints(hp);
+    this->state->setHitPointsLimit(hpLim);
+    this->state->setPhysicalDamage(dmg);
 }
 
 const std::string& Unit::getName() const {
@@ -55,19 +62,19 @@ void Unit::takeDamage(int dmg) {
     }
 }
 
-void Unit::setAbility(Ability* newAbility) {
-    delete this->ability;
+// void Unit::setAbility(Ability* newAbility) {
+//     delete this->ability;
     
-    this->ability = newAbility;
-}
+//     this->ability = newAbility;
+// }
 
 void Unit::setUnitType(const std::string unitType) {
     this->state->setUnitType(unitType);
 }
 
-void Unit::infect(Unit* victim) {
-    std::cout << "DEBUG: Unit infect works" << std::endl;
-}
+// void Unit::infect(Unit* victim) {
+//     std::cout << "DEBUG: Unit infect works" << std::endl;
+// }
 
 void Unit::attack(Unit* enemy) {
     this->ability->action(enemy);
@@ -75,11 +82,25 @@ void Unit::attack(Unit* enemy) {
 }
 
 void Unit::print() const {
-    std::cout << "Unit name:       " << this->getName() << "\n"
-              << "Unit type:       " << this->getUnitType() << "\n"
+    std::cout << "Unit type:       " << this->getUnitType() << "\n"
               << "Unit hit points: " << this->getHitPoints() << "/"
               << this->getHitPointsLimit() << "\n"
               << "Unit damage:     " << this->getDamage() << std::endl << std::endl;
+}
+
+
+
+void Unit::addHitPoints(int hpToAdd) {
+    ensureIsAlive();
+    
+    int hitPoints = this->state->getHitPoints();
+    int hitPointsLimit = this->state->getHitPointsLimit();
+    
+    if ( hitPointsLimit - hitPoints >= hpToAdd ) {
+        this->state->setHitPoints(hitPoints + hpToAdd);
+    } else {
+        this->state->setHitPoints(hitPointsLimit);
+    }
 }
 
 DefaultAbility::DefaultAbility(Unit* unit) : Ability(unit) {
@@ -99,20 +120,6 @@ void DefaultAbility::action(Unit* enemy) {
     enemy->ensureIsAlive();
     this->unit->takeDamage(enemy->getDamage() / 2);
 }
-
-void Unit::addHitPoints(int hpToAdd) {
-    ensureIsAlive();
-    
-    int hitPoints = this->state->getHitPoints();
-    int hitPointsLimit = this->state->getHitPointsLimit();
-    
-    if ( hitPointsLimit - hitPoints >= hpToAdd ) {
-        this->state->setHitPoints(hitPoints + hpToAdd);
-    } else {
-        this->state->setHitPoints(hitPointsLimit);
-    }
-}
-
 
 
 
