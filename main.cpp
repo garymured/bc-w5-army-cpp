@@ -8,16 +8,10 @@ int main() {
     TESTING Vampire
     */
     
-<<<<<<< HEAD
-    Unit* vamp1 = new Vampire("Drakula", 150, 20);
-    Unit* rogue1 = new Rogue("Robin", 140, 15);
-    Unit* sold1 = new Soldier("John", 100, 18);
-    Unit* sold2 = new Soldier("Sold", 110, 22);
-=======
     Unit* vamp1 = new Vampire();
     Unit* rogue1 = new Rogue();
     Unit* sold1 = new Soldier();
->>>>>>> unit-constructor-without-arguments
+
     
     rogue1->attack(vamp1);
     
