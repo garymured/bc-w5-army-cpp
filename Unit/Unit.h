@@ -15,7 +15,7 @@ class Unit {
         Ability* ability;
         
         Unit();
-        ~Unit();
+        virtual ~Unit();
         
         const std::string& getName() const;
         const std::string& getUnitType() const;
@@ -50,6 +50,13 @@ class DefaultAbility : public Ability {
         void action(Unit* enemy);
 };
 
-// std::ostream& operator<<(std::ostream& out, const Unit& unit);
+std::ostream& operator<<(std::ostream& out, const Unit* unit);
+
+const int soldHpLimDefault = 100;
+const int soldDmgDefault = 10;
+const int rogueHpLimDefault = 120;
+const int rogueDmgDefault = 15;
+const int vampHpLimDefault = 150;
+const int vampDmgDefault = 20;
 
 #endif //UNIT_H

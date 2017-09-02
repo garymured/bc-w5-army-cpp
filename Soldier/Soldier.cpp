@@ -6,7 +6,7 @@ Soldier::Soldier() : Unit() {
     // this->state->setHitPointsLimit(100);
     // this->state->setPhysicalDamage(10);
     
-    setState("Soldier", 100, 100, 10);
+    setState("Soldier", soldHpLimDefault, soldHpLimDefault, soldDmgDefault);
     
     // std::cout << "DEBUG: Soldier constructor works" << std::endl;
 }
@@ -14,3 +14,10 @@ Soldier::Soldier() : Unit() {
 Soldier::~Soldier() {
     // std::cout << "DEBUG: Soldier destructor works" << std::endl;
 }
+
+// std::ostream& operator<<(std::ostream& out, const Soldier* soldier) {
+//     out << *((Unit*)(&soldier));
+    
+//     return out;
+// }
+

@@ -10,6 +10,9 @@ Ability::~Ability() {
     
 }
 
+void Ability::infect(Unit* victim) {
+    // std::cout << "DEBUG: Ability infects works" << std::endl;
+}
 
 // AbilityType::AbilityType(Ability* ability) {
 //     this->ability = ability;

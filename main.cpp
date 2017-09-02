@@ -11,32 +11,46 @@ int main() {
     Unit* vamp1 = new Vampire();
     Unit* rogue1 = new Rogue();
     Unit* sold1 = new Soldier();
-
     
-    rogue1->attack(vamp1);
-    
-    vamp1->print();
+    sold1->print();
     rogue1->print();
-    
-    rogue1->attack(vamp1);
-    
     vamp1->print();
-    rogue1->print();
-    
-    vamp1->attack(rogue1);
-    
-    vamp1->print();
-    rogue1->print();
-    
-    // vamp1->ability->infect(rogue1);
-    
-    vamp1->print();
-    rogue1->print();
     
     rogue1->attack(sold1);
     
-    rogue1->print();
+    vamp1->ability->infect(sold1);
+    
+    // vamp1->print();
     sold1->print();
+    
+    sold1->ability->infect(rogue1);
+    
+    rogue1->print();
+    
+    // rogue1->attack(vamp1);
+    
+    // vamp1->print();
+    // rogue1->print();
+    
+    // rogue1->attack(vamp1);
+    
+    // vamp1->print();
+    // rogue1->print();
+    
+    // vamp1->attack(rogue1);
+    
+    // vamp1->print();
+    // rogue1->print();
+    
+    // vamp1->ability->infect(rogue1);
+    
+    // vamp1->print();
+    // rogue1->print();
+    
+    // rogue1->attack(sold1);
+    
+    // rogue1->print();
+    // sold1->print();
     
     
     delete vamp1;

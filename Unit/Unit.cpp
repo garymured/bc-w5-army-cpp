@@ -62,11 +62,11 @@ void Unit::takeDamage(int dmg) {
     }
 }
 
-// void Unit::setAbility(Ability* newAbility) {
-//     delete this->ability;
+void Unit::setAbility(Ability* newAbility) {
+    delete this->ability;
     
-//     this->ability = newAbility;
-// }
+    this->ability = newAbility;
+}
 
 void Unit::setUnitType(const std::string unitType) {
     this->state->setUnitType(unitType);
@@ -125,8 +125,10 @@ void DefaultAbility::action(Unit* enemy) {
 
 // void Unit::takeDamage(int dmg) = 0;
 
-// std::ostream& operator<<(std::ostream& out, const UnitState& state) {
-//     out << "Unit name: " << state.getName() << std::endl;
-//     out << "Unit hit points: " << state.getHitPoints() << "/" << state.getHitPointsLimit() << std::endl;
-//     out << "Unit damage: " << state.getDamage() << std::endl;
-// }
+std::ostream& operator<<(std::ostream& out, const Unit* unit) {
+    out << "Unit type:       " << unit->getUnitType() << "\n"
+        << "Unit hit points: " << unit->getHitPoints() << "/" << unit->getHitPointsLimit() << "\n"
+        << "Unit damage:     " << unit->getDamage() << std::endl;
+        
+        return out;
+}

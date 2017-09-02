@@ -3,7 +3,7 @@
 Rogue::Rogue() : Unit() {
     this->ability = new RogueAbility(this);
     
-    setState("Rogue", 120, 120, 15);
+    setState("Rogue", rogueHpLimDefault, rogueHpLimDefault, rogueDmgDefault);
 }
 
 Rogue::~Rogue() {

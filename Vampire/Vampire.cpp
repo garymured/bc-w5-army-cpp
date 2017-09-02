@@ -3,7 +3,7 @@
 Vampire::Vampire() : Unit() {
     this->ability = new VampireAbility(this);
     
-    setState("Vampire", 150, 150, 20);
+    setState("Vampire", vampHpLimDefault, vampHpLimDefault, vampDmgDefault);
     
     // std::cout << "DEBUG: Vampire constructor works" << std::endl;
 }
@@ -34,4 +34,13 @@ void VampireAbility::action(Unit* enemy) {
     
     enemy->ensureIsAlive();
     this->unit->takeDamage(enemy->getDamage() / 2);
+}
+
+void VampireAbility::infect(Unit* victim) {
+    int victimHp = victim->getHitPoints();
+    
+    if ( victim->getUnitType() != "Werevolf" ) {
+        victim->setAbility(new VampireAbility(victim));
+        victim->setState("Vampire", victimHp, vampHpLimDefault, vampDmgDefault);
+    }
 }

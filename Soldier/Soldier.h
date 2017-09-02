@@ -12,4 +12,6 @@ class Soldier : public Unit {
         ~Soldier();
 };
 
+// std::ostream& operator<<(std::ostream& out, const Soldier* soldier);
+
 #endif // SOLDIER_H

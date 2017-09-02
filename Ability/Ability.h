@@ -12,15 +12,11 @@ class Ability {
         Unit* unit;
     public:
         Ability(Unit* unit);
-        ~Ability();
+        virtual ~Ability();
         
         virtual void action(Unit* unit) = 0;
-        // virtual void infect(Unit* victim) = 0;
+        virtual void infect(Unit* victim);
 };
-
-
-
-
 
 // class AbilityType {
 //     protected:
