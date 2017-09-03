@@ -1,57 +1,40 @@
 #include <iostream>
-#include "Soldier/Soldier.h"
-#include "Rogue/Rogue.h"
-#include "Vampire/Vampire.h"
+#include "Units/Soldier.h"
+#include "Units/Rogue.h"
+#include "Units/Vampire.h"
+#include "Units/Werewolf.h"
 
 int main() {
     /* 
     TESTING Vampire
     */
     
-    Unit* vamp1 = new Vampire();
-    Unit* rogue1 = new Rogue();
-    Unit* sold1 = new Soldier();
+    // Unit* vamp1 = new Vampire("Sanya");
+    // Unit* rogue1 = new Rogue("Vova");
+    // Unit* sold1 = new Soldier("Dima");
+    // Unit* werewolf1 = new Werewolf("Serega");
+    
+    Vampire* vamp1 = new Vampire("Sanya");
+    Rogue* rogue1 = new Rogue("Vova");
+    Soldier* sold1 = new Soldier("Dima");
+    Werewolf* werewolf1 = new Werewolf("Serega");
+    
     
     sold1->print();
     rogue1->print();
     vamp1->print();
+    werewolf1->print();
     
-    rogue1->attack(sold1);
+    // werewolf1->ability->switchState();
     
-    vamp1->ability->infect(sold1);
-    
-    // vamp1->print();
-    sold1->print();
-    
-    sold1->ability->infect(rogue1);
-    
+    // sold1->ability->infect(rogue1);
     rogue1->print();
     
-    // rogue1->attack(vamp1);
+    // vamp1->ability->infect(sold1);
+    sold1->print();
     
-    // vamp1->print();
-    // rogue1->print();
-    
-    // rogue1->attack(vamp1);
-    
-    // vamp1->print();
-    // rogue1->print();
-    
-    // vamp1->attack(rogue1);
-    
-    // vamp1->print();
-    // rogue1->print();
-    
-    // vamp1->ability->infect(rogue1);
-    
-    // vamp1->print();
-    // rogue1->print();
-    
-    // rogue1->attack(sold1);
-    
-    // rogue1->print();
-    // sold1->print();
-    
+    // sold1->ability->infect(rogue1);
+    rogue1->print();
     
     delete vamp1;
     delete rogue1;
@@ -61,8 +44,8 @@ int main() {
     TESTING Soldier
     */
     
-    // Unit* sold1 = new Soldier();
-    // Unit* sold2 = new Soldier();
+    // Unit* sold1 = new Soldier("Petr");
+    // Unit* sold2 = new Soldier("Alex");
     
     // sold1->print();
     // sold2->print();
@@ -79,8 +62,9 @@ int main() {
     TESTING Rogue
     */
     
-    // Unit* rogue1 = new Rogue();
-    // Unit* sold1 = new Soldier();
+    // Unit* rogue1 = new Rogue("Petya");
+    // Unit* sold1 = new Soldier("Vanya");
+    // Unit* rogue2 = new Rogue("Vasya");
     
     // rogue1->print();
     // sold1->print();
@@ -97,6 +81,7 @@ int main() {
     
     // delete rogue1;
     // delete sold1;
+    // delete rogue2;
     
     return 0;
 }

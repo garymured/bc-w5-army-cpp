@@ -2,7 +2,7 @@
 #define VAMPIRE_H
 
 #include <iostream>
-#include "../Unit/Unit.h"
+#include "Unit.h"
 
 class Vampire : public Unit {
     private:
@@ -10,7 +10,7 @@ class Vampire : public Unit {
     protected:
     
     public:
-        Vampire();
+        Vampire(std::string name);
         ~Vampire();
         
 };

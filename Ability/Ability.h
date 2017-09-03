@@ -16,6 +16,9 @@ class Ability {
         
         virtual void action(Unit* unit) = 0;
         virtual void infect(Unit* victim);
+        
+        // void takeDamage(int dmg);
+        // virtual void switchState();
 };
 
 // class AbilityType {

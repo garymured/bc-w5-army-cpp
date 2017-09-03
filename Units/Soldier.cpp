@@ -1,12 +1,13 @@
 #include "Soldier.h"
 
-Soldier::Soldier() : Unit() {
+Soldier::Soldier(std::string name) : Unit(name) {
     // this->state->setUnitType("Soldier");
     // this->state->setHitPoints(100);
     // this->state->setHitPointsLimit(100);
     // this->state->setPhysicalDamage(10);
     
     setState("Soldier", soldHpLimDefault, soldHpLimDefault, soldDmgDefault);
+    
     
     // std::cout << "DEBUG: Soldier constructor works" << std::endl;
 }

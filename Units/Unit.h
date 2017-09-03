@@ -9,12 +9,11 @@ class Unit {
     private:
         
     protected:
-        
-    public:
         UnitState* state;
         Ability* ability;
+    public:
         
-        Unit();
+        Unit(std::string name);
         virtual ~Unit();
         
         const std::string& getName() const;
@@ -32,7 +31,8 @@ class Unit {
         void setState(std::string unitType, int hp, int hpLim, int dmg);
         
         void setAbility(Ability* newAbility);
-        void setUnitType(const std::string unitType);
+        void setName(std::string name);
+        // void setUnitType(const std::string unitType);
         // virtual void infect(Unit* victim);
         
         virtual void takeDamage(int dmg);
@@ -58,5 +58,7 @@ const int rogueHpLimDefault = 120;
 const int rogueDmgDefault = 15;
 const int vampHpLimDefault = 150;
 const int vampDmgDefault = 20;
+const int werewolfHpLimDefault = 160;
+const int werewolfDmgDefault = 18;
 
 #endif //UNIT_H

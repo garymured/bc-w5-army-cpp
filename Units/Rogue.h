@@ -2,7 +2,7 @@
 #define ROGUE_H
 
 #include <iostream>
-#include "../Unit/Unit.h"
+#include "Unit.h"
 
 class Rogue : public Unit {
     private:
@@ -10,7 +10,7 @@ class Rogue : public Unit {
     protected:
     
     public:
-        Rogue();
+        Rogue(std::string name);
         ~Rogue();
 };
 

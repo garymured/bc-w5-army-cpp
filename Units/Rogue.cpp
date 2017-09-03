@@ -1,6 +1,6 @@
 #include "Rogue.h"
 
-Rogue::Rogue() : Unit() {
+Rogue::Rogue(std::string name) : Unit(name) {
     this->ability = new RogueAbility(this);
     
     setState("Rogue", rogueHpLimDefault, rogueHpLimDefault, rogueDmgDefault);

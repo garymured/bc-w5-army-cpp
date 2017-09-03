@@ -1,6 +1,6 @@
 #include "Vampire.h"
 
-Vampire::Vampire() : Unit() {
+Vampire::Vampire(std::string name) : Unit(name) {
     this->ability = new VampireAbility(this);
     
     setState("Vampire", vampHpLimDefault, vampHpLimDefault, vampDmgDefault);

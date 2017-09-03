@@ -1,9 +1,10 @@
 #include "Unit.h"
 
-Unit::Unit() {
+Unit::Unit(std::string name) {
     this->state = new UnitState();
     this->ability = new DefaultAbility(this);
     
+    setName(name);
     // this->state->setName(name);
     // this->state->setHitPoints(hp);
     // this->state->setHitPointsLimit(hp);
@@ -68,21 +69,27 @@ void Unit::setAbility(Ability* newAbility) {
     this->ability = newAbility;
 }
 
-void Unit::setUnitType(const std::string unitType) {
-    this->state->setUnitType(unitType);
+void Unit::setName(std::string name) {
+    this->state->setName(name);
 }
+
+// void Unit::setUnitType(const std::string unitType) {
+//     this->state->setUnitType(unitType);
+// }
 
 // void Unit::infect(Unit* victim) {
 //     std::cout << "DEBUG: Unit infect works" << std::endl;
 // }
 
 void Unit::attack(Unit* enemy) {
+    
     this->ability->action(enemy);
     // enemy->counterAttack(this);
 }
 
 void Unit::print() const {
-    std::cout << "Unit type:       " << this->getUnitType() << "\n"
+    std::cout << "Unit name:       " << this->getName() << "\n"
+              << "Unit type:       " << this->getUnitType() << "\n"
               << "Unit hit points: " << this->getHitPoints() << "/"
               << this->getHitPointsLimit() << "\n"
               << "Unit damage:     " << this->getDamage() << std::endl << std::endl;
