@@ -26,6 +26,8 @@ class UnitState {
         void setHitPoints(int hp);
         void setHitPointsLimit(int hp);
         void setPhysicalDamage(int dmg);
+        
+        // void takePhysicalDamage(int dmg);
 };
 
 # endif // UNITSTATE_H

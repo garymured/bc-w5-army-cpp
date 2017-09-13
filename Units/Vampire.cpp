@@ -34,13 +34,16 @@ void VampireAbility::action(Unit* enemy) {
     
     enemy->ensureIsAlive();
     this->unit->takeDamage(enemy->getDamage() / 2);
+    
+    infect(enemy);
 }
 
 void VampireAbility::infect(Unit* victim) {
     int victimHp = victim->getHitPoints();
     
-    if ( victim->getUnitType() != "Werevolf" ) {
+    if ( victim->getUnitType() != "Werewolf" ) {
         victim->setAbility(new VampireAbility(victim));
-        victim->setState("Vampire", victimHp, vampHpLimDefault, vampDmgDefault);
+        victim->setUnitType("Vampire");
+        // victim->setState("Vampire", victimHp, vampHpLimDefault, vampDmgDefault);
     }
 }

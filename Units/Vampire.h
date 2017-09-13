@@ -15,7 +15,6 @@ class Vampire : public Unit {
         
 };
 
-
 class VampireAbility : public Ability {
     public:
         VampireAbility(Unit* unit);

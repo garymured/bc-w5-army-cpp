@@ -73,9 +73,9 @@ void Unit::setName(std::string name) {
     this->state->setName(name);
 }
 
-// void Unit::setUnitType(const std::string unitType) {
-//     this->state->setUnitType(unitType);
-// }
+void Unit::setUnitType(const std::string unitType) {
+    this->state->setUnitType(unitType);
+}
 
 // void Unit::infect(Unit* victim) {
 //     std::cout << "DEBUG: Unit infect works" << std::endl;
@@ -134,6 +134,7 @@ void DefaultAbility::action(Unit* enemy) {
 
 std::ostream& operator<<(std::ostream& out, const Unit* unit) {
     out << "Unit type:       " << unit->getUnitType() << "\n"
+        << "Unit name:       " << unit->getName() << "\n"
         << "Unit hit points: " << unit->getHitPoints() << "/" << unit->getHitPointsLimit() << "\n"
         << "Unit damage:     " << unit->getDamage() << std::endl;
         

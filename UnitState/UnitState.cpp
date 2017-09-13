@@ -47,3 +47,13 @@ void UnitState::setHitPointsLimit(int hp) {
 void UnitState::setPhysicalDamage(int dmg) {
     this->physicalDamage = dmg;
 }
+
+// void UnitState::takePhysicalDamage(int dmg) {
+//     // this->ensureIsAlive();
+    
+//     if ( this->hitPoints > dmg ) {
+//         hitPoints = hitPoints - dmg;
+//     } else {
+//         hitPoints = 0;
+//     }
+// }

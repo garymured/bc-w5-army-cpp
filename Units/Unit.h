@@ -32,14 +32,14 @@ class Unit {
         
         void setAbility(Ability* newAbility);
         void setName(std::string name);
-        // void setUnitType(const std::string unitType);
+        void setUnitType(const std::string unitType);
         // virtual void infect(Unit* victim);
         
         virtual void takeDamage(int dmg);
-        void addHitPoints(int hp);
+        virtual void addHitPoints(int hp);
         
-        void attack(Unit* enemy);
-        void counterAttack(Unit* enemy);
+        virtual void attack(Unit* enemy);
+        // virtual void counterAttack(Unit* enemy);
 };
 
 class DefaultAbility : public Ability {
