@@ -12,3 +12,16 @@ TEST_CASE( "Soldier's getters", "[Soldier]" ) {
     
     delete unit;
 }
+
+TEST_CASE( "Soldier attack", "[Soldier]" ) {
+    Soldier* soldat1 = new Soldier("Ahmed");
+    Soldier* soldat2 = new Soldier("Ivan-23");
+    
+    soldat1->attack(soldat2);
+    
+    REQUIRE ( soldat1->getHitPoints() == soldat1->getHitPointsLimit() - soldat2->getDamage() / 2 );
+    REQUIRE ( soldat2->getHitPoints() == soldat2->getHitPointsLimit() - soldat1->getDamage() );
+    
+    delete soldat1;
+    delete soldat2;
+}
