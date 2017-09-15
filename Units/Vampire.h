@@ -20,7 +20,8 @@ class VampireAbility : public Ability {
         VampireAbility(Unit* unit);
         ~VampireAbility();
         
-        void action(Unit* enemy);
+        void attack(Unit* enemy);
+        void counterAttack(Unit* enemy);
         void infect(Unit* victim);
 };
 

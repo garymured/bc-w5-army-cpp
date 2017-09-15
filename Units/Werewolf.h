@@ -21,7 +21,8 @@ class WerewolfAbility : public Ability {
         WerewolfAbility(Unit* unit);
         ~WerewolfAbility();
         
-        void action(Unit* enemy);
+        void attack(Unit* enemy);
+        void counterAttack(Unit* enemy);
         void infect(Unit* victim);
         
         // void switchState();

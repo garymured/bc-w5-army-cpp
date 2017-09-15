@@ -83,7 +83,13 @@ void Unit::setUnitType(const std::string unitType) {
 
 void Unit::attack(Unit* enemy) {
     
-    this->ability->action(enemy);
+    this->ability->attack(enemy);
+    // enemy->counterAttack(this);
+}
+
+void Unit::counterAttack(Unit* enemy) {
+    
+    this->ability->counterAttack(enemy);
     // enemy->counterAttack(this);
 }
 
@@ -120,12 +126,18 @@ DefaultAbility::~DefaultAbility() {
     
 }
 
-void DefaultAbility::action(Unit* enemy) {
+void DefaultAbility::attack(Unit* enemy) {
     enemy->ensureIsAlive();
     enemy->takeDamage(this->unit->getDamage());
     
     enemy->ensureIsAlive();
-    this->unit->takeDamage(enemy->getDamage() / 2);
+    enemy->counterAttack(this->unit);
+}
+
+void DefaultAbility::counterAttack(Unit* enemy) {
+    enemy->ensureIsAlive();
+    
+    enemy->takeDamage(this->unit->getDamage() / 2);
 }
 
 

@@ -21,7 +21,7 @@ VampireAbility::~VampireAbility() {
     
 }
 
-void VampireAbility::action(Unit* enemy) {
+void VampireAbility::attack(Unit* enemy) {
     // std::cout << "DEBUG: VampireAbility::action works" << std::endl;
     int enemyHpBeforeAttack = enemy->getHitPoints();
     int enemyHpAfterAttack;
@@ -36,6 +36,10 @@ void VampireAbility::action(Unit* enemy) {
     this->unit->takeDamage(enemy->getDamage() / 2);
     
     infect(enemy);
+}
+
+void VampireAbility::counterAttack(Unit* enemy) {
+    
 }
 
 void VampireAbility::infect(Unit* victim) {

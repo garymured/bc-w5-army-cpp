@@ -19,7 +19,8 @@ class RogueAbility : public Ability {
         RogueAbility(Unit* unit);
         ~RogueAbility();
         
-        void action(Unit* enemy);
+        void attack(Unit* enemy);
+        void counterAttack(Unit* enemy);
 };
 
 

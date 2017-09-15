@@ -22,7 +22,7 @@ WerewolfAbility::~WerewolfAbility() {
     
 }
 
-void WerewolfAbility::action(Unit* enemy) {
+void WerewolfAbility::attack(Unit* enemy) {
     // std::cout << "DEBUG: WerewolfAbility::action works" << std::endl;
     // int enemyHpBeforeAttack = enemy->getHitPoints();
     // int enemyHpAfterAttack;
@@ -35,6 +35,10 @@ void WerewolfAbility::action(Unit* enemy) {
     
     // enemy->ensureIsAlive();
     // this->unit->takeDamage(enemy->getDamage() / 2);
+}
+
+void WerewolfAbility::counterAttack(Unit* enemy) {
+    
 }
 
 void WerewolfAbility::infect(Unit* victim) {

@@ -14,7 +14,8 @@ class Ability {
         Ability(Unit* unit);
         virtual ~Ability();
         
-        virtual void action(Unit* unit) = 0;
+        virtual void attack(Unit* unit) = 0;
+        virtual void counterAttack(Unit* enemy) = 0;
         virtual void infect(Unit* victim);
         
         // void takeDamage(int dmg);

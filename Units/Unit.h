@@ -39,7 +39,7 @@ class Unit {
         virtual void addHitPoints(int hp);
         
         virtual void attack(Unit* enemy);
-        // virtual void counterAttack(Unit* enemy);
+        virtual void counterAttack(Unit* enemy);
 };
 
 class DefaultAbility : public Ability {
@@ -47,7 +47,8 @@ class DefaultAbility : public Ability {
         DefaultAbility(Unit* unit);
         ~DefaultAbility();
         
-        void action(Unit* enemy);
+        void attack(Unit* enemy);
+        void counterAttack(Unit* enemy);
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit* unit);

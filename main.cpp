@@ -19,38 +19,18 @@ int main() {
     Soldier* sold1 = new Soldier("Dima");
     Werewolf* werewolf1 = new Werewolf("Serega");
     
-    vamp1->attack(sold1);
+    sold1->print();
+    rogue1->print();
+    
+    rogue1->attack(sold1);
     
     sold1->print();
-    vamp1->print();
+    rogue1->print();
     
     sold1->attack(rogue1);
     
+    sold1->print();
     rogue1->print();
-    sold1->print();
-    
-    sold1->attack(werewolf1);
-    
-    sold1->print();
-    werewolf1->print();
-    
-    std::cout << sold1->getName() << std::endl;
-    
-    // sold1->print();
-    // rogue1->print();
-    // vamp1->print();
-    // werewolf1->print();
-    
-    // werewolf1->ability->switchState();
-    
-    // sold1->ability->infect(rogue1);
-    // rogue1->print();
-    
-    // vamp1->ability->infect(sold1);
-    // sold1->print();
-    
-    // sold1->ability->infect(rogue1);
-    // rogue1->print();
     
     delete vamp1;
     delete rogue1;

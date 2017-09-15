@@ -18,9 +18,15 @@ RogueAbility::~RogueAbility() {
     
 }
 
-void RogueAbility::action(Unit* enemy) {
+void RogueAbility::attack(Unit* enemy) {
     // std::cout << "DEBUG: RogueAbility::action works" << std::endl;
     
     enemy->ensureIsAlive();
     enemy->takeDamage(this->unit->getDamage());
+}
+
+void RogueAbility::counterAttack(Unit* enemy) {
+    enemy->ensureIsAlive();
+    
+    enemy->takeDamage(this->unit->getDamage() / 2);
 }
