@@ -33,13 +33,20 @@ void VampireAbility::attack(Unit* enemy) {
     this->unit->addHitPoints((enemyHpBeforeAttack - enemyHpAfterAttack) / 2);
     
     enemy->ensureIsAlive();
-    this->unit->takeDamage(enemy->getDamage() / 2);
+    enemy->counterAttack(this->unit);
     
     infect(enemy);
 }
 
 void VampireAbility::counterAttack(Unit* enemy) {
+    int enemyHpBeforeAttack = enemy->getHitPoints();
+    int enemyHpAfterAttack;
     
+    enemy->ensureIsAlive();
+    
+    enemy->takeDamage(this->unit->getDamage() / 2);
+    enemyHpAfterAttack = enemy->getHitPoints();
+    this->unit->addHitPoints((enemyHpBeforeAttack - enemyHpAfterAttack) / 2);
 }
 
 void VampireAbility::infect(Unit* victim) {
