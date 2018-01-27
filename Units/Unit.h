@@ -7,10 +7,11 @@
 
 class Unit {
     private:
-        
     protected:
         UnitState* state;
         Ability* ability;
+        
+        bool isWolf;
     public:
         
         Unit(std::string name);
@@ -40,6 +41,10 @@ class Unit {
         
         virtual void attack(Unit* enemy);
         virtual void counterAttack(Unit* enemy);
+        
+        virtual bool getStateIsWolf();
+        virtual void setStateIsWolf(bool state);
+        virtual void switchState();
 };
 
 class DefaultAbility : public Ability {
@@ -55,11 +60,11 @@ std::ostream& operator<<(std::ostream& out, const Unit* unit);
 
 const int soldHpLimDefault = 100;
 const int soldDmgDefault = 10;
-const int rogueHpLimDefault = 120;
-const int rogueDmgDefault = 15;
-const int vampHpLimDefault = 150;
-const int vampDmgDefault = 20;
-const int werewolfHpLimDefault = 160;
+const int rogueHpLimDefault = 110;
+const int rogueDmgDefault = 11;
+const int vampHpLimDefault = 120;
+const int vampDmgDefault = 15;
+const int werewolfHpLimDefault = 130;
 const int werewolfDmgDefault = 18;
 
 #endif //UNIT_H

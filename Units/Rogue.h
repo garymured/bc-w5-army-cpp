@@ -16,7 +16,7 @@ class Rogue : public Unit {
 
 class RogueAbility : public Ability {
     public:
-        RogueAbility(Unit* unit);
+        RogueAbility(Rogue* unit);
         ~RogueAbility();
         
         void attack(Unit* enemy);

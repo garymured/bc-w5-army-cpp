@@ -6,14 +6,16 @@
 
 class Werewolf : public Unit {
     private:
+        bool isWolf;
     protected:
-    
     public:
         Werewolf(std::string name);
         ~Werewolf();
         
-        bool isWolf;
+        bool getStateIsWolf();
+        void setStateIsWolf(bool state);
         
+        void switchState();
 };
 
 class WerewolfAbility : public Ability {
@@ -25,7 +27,7 @@ class WerewolfAbility : public Ability {
         void counterAttack(Unit* enemy);
         void infect(Unit* victim);
         
-        // void switchState();
+        void switchState();
 };
 
 #endif // WEREWOLF_H

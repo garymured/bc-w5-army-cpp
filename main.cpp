@@ -9,32 +9,47 @@ int main() {
     TESTING Vampire
     */
     
-    // Unit* vamp1 = new Vampire("Sanya");
-    // Unit* rogue1 = new Rogue("Vova");
-    // Unit* sold1 = new Soldier("Dima");
-    // Unit* werewolf1 = new Werewolf("Serega");
+    Unit* vamp1 = new Vampire("Sanya");
+    Unit* rogue1 = new Rogue("Vova");
+    Unit* sold1 = new Soldier("Dima");
+    Unit* werewolf1 = new Werewolf("Serega");
     
-    Vampire* vamp1 = new Vampire("Sanya");
-    Rogue* rogue1 = new Rogue("Vova");
-    Soldier* sold1 = new Soldier("Dima");
-    Werewolf* werewolf1 = new Werewolf("Serega");
+    // Vampire* vamp1 = new Vampire("Sanya");
+    // Rogue* rogue1 = new Rogue("Vova");
+    // Soldier* sold1 = new Soldier("Dima");
+    // Werewolf* werewolf1 = new Werewolf("Serega");
     
+    werewolf1->print();
     sold1->print();
-    rogue1->print();
     
-    rogue1->attack(sold1);
+    werewolf1->attack(sold1);
     
+    werewolf1->print();
     sold1->print();
-    rogue1->print();
     
-    sold1->attack(rogue1);
+    werewolf1->attack(vamp1);
     
+    werewolf1->print();
+    vamp1->print();
+    
+    vamp1->attack(sold1);
+    
+    vamp1->print();
     sold1->print();
-    rogue1->print();
+    
+    werewolf1->switchState();
+    
+    werewolf1->print();
+    
+    werewolf1->switchState();
+    
+    werewolf1->print();
+    
     
     delete vamp1;
     delete rogue1;
     delete sold1;
+    delete werewolf1;
     
     /* 
     TESTING Soldier

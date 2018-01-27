@@ -52,7 +52,7 @@ void VampireAbility::counterAttack(Unit* enemy) {
 void VampireAbility::infect(Unit* victim) {
     int victimHp = victim->getHitPoints();
     
-    if ( victim->getUnitType() != "Werewolf" ) {
+    if ( victim->getUnitType() != "Werewolf" || victim->getUnitType() != "Vampire" ) {
         victim->setAbility(new VampireAbility(victim));
         victim->setUnitType("Vampire");
         // victim->setState("Vampire", victimHp, vampHpLimDefault, vampDmgDefault);

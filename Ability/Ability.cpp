@@ -14,6 +14,10 @@ void Ability::infect(Unit* victim) {
     // std::cout << "DEBUG: Ability infects works" << std::endl;
 }
 
+void Ability::switchState() {
+    
+}
+
 // AbilityType::AbilityType(Ability* ability) {
 //     this->ability = ability;
 // }

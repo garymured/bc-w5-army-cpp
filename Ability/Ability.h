@@ -19,7 +19,7 @@ class Ability {
         virtual void infect(Unit* victim);
         
         // void takeDamage(int dmg);
-        // virtual void switchState();
+        virtual void switchState();
 };
 
 // class AbilityType {

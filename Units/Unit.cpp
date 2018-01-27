@@ -116,6 +116,11 @@ void Unit::addHitPoints(int hpToAdd) {
     }
 }
 
+bool Unit::getStateIsWolf() {}
+void Unit::setStateIsWolf(bool state) {}
+
+void Unit::switchState() {}
+
 DefaultAbility::DefaultAbility(Unit* unit) : Ability(unit) {
     
     

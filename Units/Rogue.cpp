@@ -10,7 +10,7 @@ Rogue::~Rogue() {
     // std::cout << "DEBUG: Rogue destructor works" << std::endl;
 }
 
-RogueAbility::RogueAbility(Unit* unit) : Ability(unit) {
+RogueAbility::RogueAbility(Rogue* unit) : Ability(unit) {
     // std::cout << "DEBUG: RogueAbility constructor works" << std::endl;
 }
 
